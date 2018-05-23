@@ -1,0 +1,1 @@
+[04-Aug-2017 18:15:42 Asia/Kolkata] PHP Parse error:  syntax error, unexpected '$date' (T_VARIABLE) in /home/zadglobalschool/public_html/app/Console/Commands/OrderSms.php on line 45
