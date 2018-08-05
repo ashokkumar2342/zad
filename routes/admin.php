@@ -33,6 +33,7 @@ Route::group(['middleware' => 'admin'], function() {
         Route::group(['prefix' => 'fee'], function() {
             Route::post('pay', 'StudentController@payFee')->name('admin.student.fee.paid');
             Route::get('{studentFee}/edit', 'StudentController@studentFeeEdit')->name('admin.student.fee.edit');
+            Route::get('{studentFee}/delete', 'StudentController@studentFeeDelete')->name('admin.student.fee.delete');
             Route::post('{studentFee}/update', 'StudentController@studentFeeUpdate')->name('admin.student.fee.update');
         });
     });
@@ -98,7 +99,9 @@ Route::group(['middleware' => 'admin'], function() {
         Route::post('add', 'HolidayHomeworkController@store')->name('admin.holidayhomework.post');
         Route::get('list', 'HolidayHomeworkController@index')->name('admin.holidayhomework.list');
         Route::get('search', 'HolidayHomeworkController@search')->name('admin.holidayhomework.search');
-        Route::get('{holidayhomework}/show', 'HolidayHomeworkController@show')->name('admin.holidayhomework.show');
+        // Route::get('{holidayhomework}/show', 'HolidayHomeworkController@show')->name('admin.holidayhomework.show');
+        Route::get('download/{holidayhomework}', 'HolidayHomeworkController@download')->name('admin.holidayhomework.download');
+
 
         Route::get('{holidayhomework}/edit', 'HolidayHomeworkController@edit')->name('admin.holidayhomework.edit');
         Route::post('{holidayhomework}/update', 'HolidayHomeworkController@update')->name('admin.holidayhomework.update');
@@ -135,7 +138,8 @@ Route::group(['middleware' => 'admin'], function() {
         Route::get('list', 'SyllabusController@index')->name('admin.syllabus.list');
         Route::get('search', 'SyllabusController@search')->name('admin.syllabus.search');
         Route::get('{syllabus}/edit', 'SyllabusController@edit')->name('admin.syllabus.edit');
-        Route::get('{syllabus}/show', 'SyllabusController@show')->name('admin.syllabus.show');
+        // Route::get('{syllabus}/show', 'SyllabusController@show')->name('admin.syllabus.show');
+         Route::get('download/{syllabus}', 'SyllabusController@download')->name('admin.syllabus.download');
 
         Route::post('{syllabus}/update', 'SyllabusController@update')->name('admin.syllabus.update');
         Route::get('{syllabus}/delete', 'SyllabusController@destroy')->name('admin.syllabus.delete');
@@ -180,7 +184,7 @@ Route::group(['middleware' => 'admin'], function() {
          Route::group(['prefix' => 'homework'], function() {
              Route::get('/', 'SmsController@homeworkForm')->name('admin.sms.homework.form');
              Route::post('/', 'SmsController@homeworkSend')->name('admin.sms.homework.post');
-             Route::get('homeworksms/{homework}', 'SmsController@homeworksms')->name('admin.homework.sms');
+             Route::get('homeworksms', 'SmsController@homeworksms')->name('admin.homework.sms');
 
          });
           Route::group(['prefix' => 'customized'], function() {
@@ -214,8 +218,15 @@ Route::group(['middleware' => 'admin'], function() {
          Route::get('/', 'GalleryController@index')->name('admin.gallery.list');
          Route::post('upload', 'GalleryController@store')->name('admin.gallery.post');
          Route::get('delete/{gallery}', 'GalleryController@destroy')->name('admin.gallery.delete');
-
-                
+        
+     });
+      //------------------------ Gallery-------------------------------------------
+     Route::group(['prefix' => 'gallery-category'], function() {         
+         Route::get('/', 'GalleryCategoryController@index')->name('admin.gallery-category.list');
+         Route::post('store', 'GalleryCategoryController@store')->name('admin.gallery-category.post');
+         Route::get('edit/{galleryCategory}', 'GalleryCategoryController@edit')->name('admin.gallery-category.edit');                  
+         Route::post('update', 'GalleryCategoryController@update')->name('admin.gallery-category.update');
+         Route::get('delete/{galleryCategory}', 'GalleryCategoryController@destroy')->name('admin.gallery-category.delete');
         
      });
         //------------------------ Circular-------------------------------------------
@@ -247,7 +258,10 @@ Route::group(['middleware' => 'admin'], function() {
          Route::post('student-list', 'TransferController@studentList')->name('admin.transfer.student');
          Route::get('search', 'TransferController@search')->name('admin.transfer.search'); 
      });
-          //------------------------ Remark-------------------------------------------
+          //------------------------ remark-------------------------------------------
          Route::get('remarks', 'RemarksController@index')->name('admin.remarks.list');
+         Route::get('reply/{remark}', 'RemarksController@show')->name('admin.replyRemark.show');
+         Route::get('view/{remark}', 'RemarksController@view')->name('admin.replyRemark.view');
+         Route::post('store/{remark}', 'RemarksController@store')->name('admin.replyRemark.post');
      
 });

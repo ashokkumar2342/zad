@@ -1,25 +1,18 @@
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Winter Vacations (Holiday Homework)</h4>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="col-lg-6"><h3><a href="{{ route('front.holiday-homework2') }}" title="homework">Junior Wing</a></h3></div>
-          <div class="col-lg-6"><h3><a href="{{ route('front.holiday-homework') }}" title="homework">Senior Wing</a></h3></div>
+ 
+               
+           
+          
 
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
 
-  </div>
-</div>
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="modal-footer">-->
+<!--        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--  </div>-->
+<!--</div>-->
     <!-- Preloader start here -->
    <!--  <div id="loader-wrapper">
       <div id="loader"></div>
@@ -42,6 +35,7 @@
                     <p>Call Us</p>
                     <p>Jr.<b> +91-8397068001</b></p>
                     <p>Sr.<b> +91-8570006662</b></p>
+                    <p>Omaxe.<b>8295300441</b></p>
 
                   </div>
                 </li>
@@ -52,6 +46,7 @@
 
                    <p style="font-size:14px;">Opening : <b>7:30am</b></p>
                    <p style="font-size:14px;">Closing : <b>2:30pm</b></p>
+                   <p style="font-size:14px;">&nbsp;<b></b></p>
 
                   </div>
                 </li>
@@ -62,6 +57,7 @@
                     <p>Our Address</p>
                     <p style="font-size:13px;">Jr.<b> Zad Eduplex, HUDA Complex, Rohtak-124001(Hr.)</b></p>
                     <p style="font-size:13px;">Sr.<b> 8th Mile Stone, Rohtak-Jind Road, N.H. 71, Rk. (Hr.)</b></p></span>
+                    <p style="font-size:13px;">Omaxe<b> OMAXE CIty, Delhi Road Rohtak -124001(Hr.)</b></p></span>
 
                   </div>
                 </li>
@@ -151,11 +147,20 @@
                       {{-- <li><a href="{{ route('front.rang-mahotsav') }}">Rang Mahotsav</a></li> --}}
                     </ul>
                   </li>
-                  <li><a href="{{ route('front.career') }}">Career</a></li>
+                   <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Enquiry<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                     <li><a href="{{ route('front.enquiry') }}">Enquiry</a></li>
+
+                     <li><a href="{{ route('front.career') }}">Career</a></li>
+                      {{-- <li><a href="{{ route('front.rang-mahotsav') }}">Rang Mahotsav</a></li> --}}
+                    </ul>
+                  </li>
+                 
                   
                   <li><a href="{{ route('front.contact') }}">Contact</a></li>
                   <li class="dropdown button-default">
-                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Login <span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Login <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                        <li><a href="{{ route('student.home') }}">Parent's Login</a></li>
 

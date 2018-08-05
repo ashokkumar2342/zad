@@ -2,20 +2,21 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Student;
-use App\StudentFee;
+use App\Center;
 use App\ClassType;
+use App\DiscountType;
+use App\Http\Controllers\Controller;
 use App\PaymentType;
 use App\SessionDate;
-use App\DiscountType;
+use App\Student;
+use App\StudentFee;
 use App\TransportRoute;
-use App\Center;
-use Storage;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use Excel;
-use DB;
 use Carbon;
+use DB;
+use Excel;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Storage;
 
 class StudentController extends Controller
 {
@@ -130,6 +131,14 @@ class StudentController extends Controller
     
    public function studentFeeEdit(Request $request, StudentFee $studentFee){
         return view('admin.student.fee.edit',compact('studentFee'));
+    }
+    public function studentFeeDelete(Request $request, StudentFee $studentFee){
+        if ($studentFee->delete()) {
+            return redirect()->back()->with(['class'=>'success','message'=>'Fee delete success ...']);
+              
+           }
+        return redirect()->back()->with(['class'=>'error','message'=>'Whoops ! Look like somthing went wrong ..']);
+        
     }
 
     public function studentFeeUpdate(Request $request,StudentFee $studentFee, Student $student){
@@ -447,8 +456,10 @@ class StudentController extends Controller
         $student->payment_type_id= $request->payment_type;
         $student->transport_id = $request->driver_id;
         $student->route_id = $request->route;
+         $data = $request->center;        
+
         if($student->save()){ 
-            return redirect()->route('admin.student.view',$student->id)->with(['class'=>'success','message'=>'student update success ...']);
+            return redirect($data==1?'admin/student/huda':$data==2?'admin/student/jind':'admin/student/omax')->with(['class'=>'success','message'=>'student update success ...']);
         }
         return redirect()->back()->with(['class'=>'error','message'=>'Whoops ! Look like somthing went wrong ..']);
     }
@@ -546,5 +557,7 @@ class StudentController extends Controller
     {
         return view('admin.student.studentdetails.feeReceipt',compact('studentFee'));
     }
+
+
    
 }

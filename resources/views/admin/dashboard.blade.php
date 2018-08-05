@@ -5,6 +5,8 @@
       <h1>
         Dashboard
         <small>Control panel</small>
+        
+        <a href="{{ route('admin.remarks.list') }}" >Today Remarks: {{ $dayRemarks }}</a>
       </h1>
       <ol class="breadcrumb">
        <li> <i class="fa fa-envelope"></i> SMS Balance</li>
@@ -56,6 +58,26 @@
             <a href="{{ route('admin.student.jind') }}" class="small-box-footer">Jind Road</a>
           </div>
         </div>
+
+        <!-- ./col -->
+        <!-- ./col -->
+        <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red">
+            <div class="inner">
+              <h3> {{ $omaxeStudents }} </h3>
+              <p>Students</p>
+            </div>
+            <div class="icon">
+              {{-- <i class="ion ion-stats-bars"></i> --}}
+              {{-- <i class="fa fa-users"></i> --}}
+              <i class="ion ion-ios-people-outline"></i>
+
+            </div>
+            <a href="{{ route('admin.student.jind') }}" class="small-box-footer">OMAXE</a>
+          </div>
+        </div>
+        
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
@@ -73,22 +95,7 @@
             <a href="{{ route('admin.birthday.list') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>0</h3>
-
-              <p>Absent Student</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer"> <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
+       
       </div>
       <div class="box">
         <div class="col-md-6">
@@ -158,8 +165,22 @@
                      <i class="fa fa-upload" aria-hidden="true"></i> Upload Assignment 
                     </a>
                     </div>
-                  <div class="col-md-6">
-                  
+                  <div class="col-md-6">                     
+                    <a href="{{ route('admin.remarks.list') }}" type="button" class="btn btn-block btn-info btn-md"> 
+                     </i>Today Remark: {{ $dayRemarks }}
+                     <a href="{{ route('admin.remarks.list') }}" type="button" class="btn btn-block btn-primary btn-md"> 
+                     </i>Month Remark: {{ $monthRemarks }}
+                    </a>
+                     <a href="{{ route('admin.remarks.list') }}" type="button" class="btn btn-block btn-danger btn-md"> 
+                     </i>All Remark: {{ $allRemarks }}
+                    </a>
+                    <botton class="btn btn-block btn-danger btn-md"> 
+                     </i>Absent Students: {{ $omaxeAbsent }}
+                    </botton>
+                  </div>
+                  <div class="col-md-6">                     
+                    
+                    </a>
                   </div>
                 </div>
               

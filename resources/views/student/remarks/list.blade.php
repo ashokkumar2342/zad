@@ -45,7 +45,8 @@
       <div class="row" style="padding: 4px; border: solid 1px #eee;">
         <div class="col-xs-3">{{ $remark->created_at->format('d-m-Y') }}</div>
         <div class="col-xs-7">{{ $remark->remarks }}</div>
-        <div class="col-xs-2"><a href="{{ route('student.remarks.delete',$remark->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a></div>
+        <div class="col-xs-2"><a href="{{ route('student.replyRemark.show',$remark->id) }}" class="btn btn-info btn-xs"><i class="fa fa-eye" aria-hidden="true"></i> Reply View</a></div>
+        {{-- <div class="col-xs-2"><a href="{{ route('student.remarks.delete',$remark->id) }}" class="btn btn-danger btn-xs"><i class="fa fa-trash" aria-hidden="true"></i></a></div> --}}
 
       </div>
       @endforeach

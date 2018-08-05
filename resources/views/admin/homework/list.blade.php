@@ -96,7 +96,7 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table   class="table table-bordered table-striped table-hover">
+              <table   class="table table-bordered table-striped table-hover" id="homeworkTable">
                 <thead>
                 <tr>           
                   <th>Center</th>
@@ -128,7 +128,8 @@
                      <a class=" {{ ($homework->status == 1) ?'btn-success':'btn-danger'}}" id="send"  href="{{ route('admin.homework.status',$homework->id) }}">{{ ($homework->status == 1)? 'Active' : 'Inactive' }}</a>
                     </td> --}}
                     <td align="center">
-                  <a class=" {{ ($homework->status == 1) ?'btn btn-success btn-xs':'btn btn-danger btn-xs disabled'}}" id="send" onclick="return confirm('Are you Send Homework ?')";  href="{{ route('admin.homework.sms',$homework->id) }}">{{ ($homework->status == 1)? 'Send' : 'sent' }}</a> 
+                  <button class=" {{ ($homework->status == 1) ?'btn btn-success btn-xs':'btn btn-danger btn-xs disabled'}} btn_send"   onclick="homeworkSend({{ $homework->id }})" >{{ ($homework->status == 1)? 'Send' : 'sent' }}</button> 
+                  {{-- <button type="button"></button> --}}
                   </td>  
                   <td align="center">
                                      
@@ -165,7 +166,27 @@
  <script type="text/javascript" src="//cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 
  <script type="text/javascript">
+  function homeworkSend(id){
+     
 
+     $.ajax({
+       url: '{{ route('admin.homework.sms') }}',
+       type: 'get',
+       
+       data: {id: id},
+     })
+     .done(function(data) {
+       toastr[data.class](data.message)
+       $("#homeworkTable").load(location.href + ' #homeworkTable'); 
+     })
+     .fail(function() {
+       console.log("error");
+     })
+     .always(function() {
+       console.log("complete");
+     });
+     
+  }
 
  $(document).ready(function(){
         $('#dataTable').DataTable();

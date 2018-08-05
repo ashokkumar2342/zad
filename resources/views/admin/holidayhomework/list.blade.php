@@ -123,7 +123,9 @@
                   
                   
                   <td align="center">
-                    <a class="btn btn-info btn-xs" href="{{ route('admin.holidayhomework.show',$holidayhomework->id) }}"><i class="fa fa-eye"></i></a>
+                    {{-- <a class="btn btn-info btn-xs" href="{{ route('admin.holidayhomework.show',$holidayhomework->id) }}"><i class="fa fa-eye"></i></a> --}}
+                    {{-- <a class="btn-success btn-xs"  href="{{ route('admin.holidayhomework.download',$holidayhomework->id) }}"  ><i class="fa fa-download"></i></a> --}}
+                      <a class="btn-success btn-xs"  href="{{ asset('uploads/holidayhomework/'.$holidayhomework->holiday_homework) }}" target="blank"  ><i class="fa fa-download"></i></a>
                     <a class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete this data ?')" href="{{ route('admin.holidayhomework.delete',$holidayhomework->id) }}"><i class="fa fa-trash"></i></a>
                   </td>
                  

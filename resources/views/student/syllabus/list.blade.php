@@ -31,8 +31,10 @@
                   <td>{{ $syllabus->title }}</td>
                   <td align="center">
                     
-                    <a class="btn btn-info btn-xs" href="{{ route('student.syllabus.show',$syllabus->id) }}"><i class="fa fa-eye"></i></a>
+                    {{-- <a class="btn btn-info btn-xs" href="{{ route('student.syllabus.show',$syllabus->id) }}"><i class="fa fa-eye"></i></a> --}}
+                    {{-- <a class="btn-success btn-xs"  href="{{ route('student.syllabus.download',$syllabus->id) }}"  ><i class="fa fa-download"></i></a> --}}
                     {{-- <a class="btn btn-success btn-xs" href="/uploads/syllabus/{{$syllabus->holiday_homework }}"><i class="fa fa-download"></i></a> --}}
+                     <a class="btn-success btn-xs"  href="{{ asset('uploads/holidayhomework/'.$syllabus->syllabus) }}"   target="blank"><i class="fa fa-download"></i></a>
 
                   </td>                 
                 </tr>

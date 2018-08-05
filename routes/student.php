@@ -50,7 +50,9 @@ Route::group(['middleware' => 'student'], function() {
     });
       Route::group(['prefix' => 'holidayhomework'], function() {         
         Route::get('list', 'HolidayHomeworkController@index')->name('student.holidayhomework.list');
-        Route::get('{download}/download', 'HolidayHomeworkController@download')->name('student.holidayhomework.download');
+        // Route::get('{download}/download', 'HolidayHomeworkController@download')->name('student.holidayhomework.download');
+         Route::get('download/{holidayhomework}', 'HolidayHomeworkController@download')->name('student.holidayhomework.download');
+
         Route::get('{holidayhomework}/show', 'HolidayHomeworkController@show')->name('student.holidayhomework.show');
     });
        Route::group(['prefix' => 'eventcalender'], function() {         
@@ -65,7 +67,9 @@ Route::group(['middleware' => 'student'], function() {
     });
          Route::group(['prefix' => 'syllabus'], function() {         
         Route::get('list', 'SyllabusController@index')->name('student.syllabus.list');
-        Route::get('{download}/download', 'SyllabusController@download')->name('student.syllabus.download');
+        // Route::get('{download}/download', 'SyllabusController@download')->name('student.syllabus.download');
+         Route::get('download/{syllabus}', 'SyllabusController@download')->name('student.syllabus.download');
+
         Route::get('{syllabus}/show', 'SyllabusController@show')->name('student.syllabus.show');
     });
           Route::group(['prefix' => 'feedetails'], function() {
@@ -78,9 +82,9 @@ Route::group(['middleware' => 'student'], function() {
       Route::get('/', 'RemarksController@index')->name('student.remarks.list'); 
       Route::post('store', 'RemarksController@store')->name('student.remarks.post');
       Route::get('delete/{remark}', 'RemarksController@destroy')->name('student.remarks.delete'); 
+       Route::get('reply/{remark}', 'RemarksController@show')->name('student.replyRemark.show');
 
-
-
+ 
     });
         //------------------------Calender-------------------------------------------     
         

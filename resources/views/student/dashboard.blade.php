@@ -59,13 +59,19 @@
       </ol> --}}
     </section>
  	<!-- Main content -->
-    <section class="content hidden-xs">
+   {{--  <section class="content hidden-xs">
         <div class="row">
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>2000</h3>
+                @php
+                  $totalDepFee = 0;
+                 foreach ($student->studentFee as $studentFe):
+                   $totalDepFee += $studentFe->discount+$studentFe->received_fee;
+                 endforeach
+                 @endphp
+                      <h4> Balance : <b>{{$student->totalFee-$totalDepFee }}</b></h4>  
               <p>Total Balance</p>
             </div>
             <div class="icon">
@@ -122,7 +128,7 @@
         </div>
         <!-- ./col -->
       </div>
-    </section>
+    </section> --}}
     <!-- /.content -->
 
     <section class="content hidden-lg hidden-sm">

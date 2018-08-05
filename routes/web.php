@@ -22,6 +22,10 @@ Route::group(['prefix' => 'about'], function() {
 Route::group(['prefix' => 'academic'], function() {
     Route::get('holiday-homework', 'Front\HomeController@holiday')->name('front.holiday-homework');
     Route::get('holiday-homework2', 'Front\HomeController@holiday2')->name('front.holiday-homework2');
+    Route::get('holiday-homework3', 'Front\HomeController@holiday3')->name('front.holiday-homework3');
+    Route::get('syllabus', function(){
+    	return view('front.syllabus');
+    } )->name('front.syllabus');
 
 });
 Route::group(['prefix' => 'art'], function() {
@@ -68,6 +72,8 @@ Route::get('video-gallery', 'Front\GalleryController@video')->name('front.video'
 
 });
 Route::get('career', 'Front\CareerController@index')->name('front.career');
+Route::get('enquiry', 'Front\CareerController@enquiry')->name('front.enquiry');
+Route::post('store', 'Front\CareerController@enquiryStore')->name('front.enquiry.post');
 Route::post('career', 'Front\CareerController@store')->name('front.career.post');
 Route::get('contact', 'Front\ContactController@index')->name('front.contact');
 Route::post('contact', 'Front\ContactController@store')->name('front.contact.post');

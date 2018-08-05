@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\student;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Remark;
+use App\ReplyRemark;
+use Illuminate\Http\Request;
 use auth;
 
 class RemarksController extends Controller
@@ -38,6 +39,11 @@ class RemarksController extends Controller
     		return redirect()->route('student.remarks.list')->with(['message'=>' remaks send successfully','class'=>'success']);
     	}
          
+    }
+    public function show(Remark $remark)
+    {
+        $replyRemarks = ReplyRemark::where('remark_id',$remark->id)->orderBy('created_at','desc')->get();
+        return view('student.remarks/reply_remark', compact('replyRemarks'));
     }
 
     public function destroy(Remark $remark)

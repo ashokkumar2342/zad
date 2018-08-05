@@ -14,7 +14,7 @@
         <input name="file" type="file" multiple />
       </div>
       <div>
-      	{{ Form::select('cid', ['1' => 'Birthday', '2' => 'Other']) }}
+      	{{ Form::select('cid', $category) }}
       </div>
     </form>
 </section>

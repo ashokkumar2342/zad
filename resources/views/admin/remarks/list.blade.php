@@ -25,10 +25,18 @@
          <td>{{ $remark->classes->name }}</td>
          <td>{{ $remark->sections->name }}</td>
          <td>{{ $remark->remarks }}</td>
-         <td></td>
+         <td>
+            <a href="{{ route('admin.replyRemark.show',$remark->id) }}" class="btn btn-success btn-xs" >Reply</a>
+            {{-- <a href="{{ route('admin.replyRemark.view',$remark->id) }}" class="btn btn-warning btn-xs" >Reply View</a> --}}
+         </td>
        </tr>
       @endforeach
+      <tr>
+      
+        <td>{{ $remarks->links() }}</td>
+      </tr>
      </table> 
+
      </div>
        
          

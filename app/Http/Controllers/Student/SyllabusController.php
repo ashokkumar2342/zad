@@ -23,7 +23,7 @@ class SyllabusController extends Controller
     public function index()
     {
        $student = Auth::guard('student')->user(); 
-        $syllabuses =  Syllabus::where('class_id',$student->class_id)->orderBy('created_at','desc')->paginate(10);
+        $syllabuses =  Syllabus::where('center_id',$student->center_id)->where('class_id',$student->class_id)->orderBy('created_at','desc')->paginate(10);
         return view('student.syllabus.list',compact('syllabuses')); 
     }
 
@@ -81,6 +81,16 @@ class SyllabusController extends Controller
     public function update(Request $request, Syllabus $syllabus)
     {
         //
+    }
+    public function download(Syllabus $syllabus)
+    {
+         
+       // return view('admin.holidayhomework.show',compact('holidayhomework'));
+       $path = public_path('uploads\holidayhomework/'.$syllabus->syllabus);
+
+       return response()->download($path);
+           
+        
     }
 
     /**

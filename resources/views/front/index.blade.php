@@ -181,7 +181,7 @@
               @foreach ($news as $new)
                  {{-- expr --}}
                
-              <p> <i class="fa fa-hand-o-right" aria-hidden="true"></i> {{$new->news}}  </p> 
+              <p class="bg-warning" style="color:red">  <img src="https://zippy.gfycat.com/DownrightSneakyBrant.gif" style="height:15px;"> {{$new->news}}  </p>   
 
                @endforeach 
              
@@ -205,7 +205,7 @@
                 <div class="col-md-3 col-sm-3 col-12">
                   <div class="achievement-item">
                     <i class="icon "><img src="images/student.png"></i>
-                    <span class="counter">1400</span><span>+</span>
+                    <span class="counter">1552</span><span>+</span>
                     <p>Total Students</p>
                   </div><!-- achievement item -->
                 </div>
@@ -213,7 +213,7 @@
                   <div class="achievement-item">
                     <i class="icon "><img src="images/teacher.png"></i>
                     <i class="icon  "></i>
-                    <span class="counter">52</span>
+                    <span class="counter">70</span>
                     <p>Class Rooms</p>
                   </div><!-- achievement item -->
                 </div>
@@ -221,7 +221,7 @@
                   <div class="achievement-item">
                     <i class="icon "><img src="images/bus.png"></i>
                     <i class="icon "></i>
-                    <span class="counter">35</span><span>+</span>
+                    <span class="counter">42</span><span>+</span>
                     <p>Schools bus</p>
                   </div><!-- achievement item -->
                 </div>

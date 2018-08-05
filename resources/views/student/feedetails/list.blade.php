@@ -16,13 +16,20 @@
               <div class="col-md-9">
               <div class="row">
                 <div class="col-md-6">
-                @php
+               {{--  @php
                   $totalDepFee = 0;
                  foreach ($student->studentFee as $studentFe):
                    $totalDepFee += $studentFe->discount+$studentFe->received_fee;
                  endforeach
                  @endphp
-                 <h4> Balance : <b>{{$student->classFee->total_fee-$totalDepFee }}</b></h4>                      
+                 <h4> Balance : <b>{{$student->classFee->total_fee-$totalDepFee }}</b></h4>  --}}  
+                  @php
+                  $totalDepFee = 0;
+                 foreach ($student->studentFee as $studentFe):
+                   $totalDepFee += $studentFe->discount+$studentFe->received_fee;
+                 endforeach
+                 @endphp
+                      <h4> Balance : <b>{{$student->totalFee-$totalDepFee }}</b></h4>                    
                 </div>
               </div>             
             </div>       

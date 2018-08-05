@@ -25,7 +25,7 @@
                 <li class="contact-item">
                   <span class="icon flaticon-signs"></span>
                   <div class="content">
-                    <h5 style="color:#ffc000; ">School Campus: Play Wing</h5>
+                    <h5 style="color:#e84b3a; ">School Campus: Play Wing</h5>
                     <p>Zad Eduplex, HUDA Complex, Rohtak-124001(Hr.) <br> Mob: +91-8397068001</p>
                   </div>
                 </li>
@@ -36,7 +36,13 @@
                     <p>Zad Global School, 8th Mile Stone, Rohtak-Jind Road, N.H. 71, Rohtak-124001(Hr.) <br> Mob: +91-8570006662</p>
                   </div>
                 </li>
-               
+               <li class="contact-item">
+                <span class="icon flaticon-signs"></span>
+                <div class="content">
+                  <h5 style="color:#e84b3a; ">School Campus: OMAXE CIty</h5>
+                  <p>Zad Global School, OMAXE CIty, Delhi Road Rohtak -124001(Hr.) <br> Mob: +91-8295300441</p>
+                </div>
+              </li>
                 <li class="contact-item">
                   <span class="icon flaticon-message"></span>
                   <div class="content">

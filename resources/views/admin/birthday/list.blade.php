@@ -17,8 +17,8 @@
                 <thead>
                 <tr>           
                   <th>Sr.No</th>
-                  <th>Student Nmae</th>
-                  <th>Father's Nmae</th>
+                  <th>Student Name</th>
+                  <th>Father's Name</th>
                   <th>Mother's Name</th>
                   <th>SMS Number</th>                
                 </tr>

@@ -110,7 +110,9 @@
                   <td>{{ $syllabus->classes->name or '' }}</td>
                   <td>{{ $syllabus->title }}</td>  
                   <td align="center">
-                    <a class="btn btn-info btn-xs" href="{{ route('admin.syllabus.show',$syllabus->id) }}"><i class="fa fa-eye"></i></a>
+                   {{--  <a class="btn btn-info btn-xs" href="{{ route('admin.syllabus.show',$syllabus->id) }}"><i class="fa fa-eye"></i></a> --}}
+                   {{-- <a class="btn-success btn-xs"  href="{{ route('admin.syllabus.download',$syllabus->id) }}"  ><i class="fa fa-download"></i></a> --}}
+                   <a class="btn-success btn-xs"  href="{{ asset('uploads/holidayhomework/'.$syllabus->syllabus) }}" target="blank" ><i class="fa fa-download"></i></a>
                     <a class="btn btn-danger btn-xs" onclick="return confirm('Are you sure to delete this data ?')" href="{{ route('admin.syllabus.delete',$syllabus->id) }}"><i class="fa fa-trash"></i></a>
                   </td>
                  
@@ -196,26 +198,45 @@
     
      @endif
     $("#session").change(function(){
-        $('#class').html('<option value="">Searching ...</option>');
-        $.ajax({
-          method: "get",
-          url: "{{ route('admin.class.search') }}",
-          data: { id: $(this).val() }
-        })
-        .done(function( response ) {            
-            if(response.length>0){
-                $('#class').html('<option value="">Select Class</option>');
-                for (var i = 0; i < response.length; i++) {
-                    $('#class').append('<option value="'+response[i].id+'">'+response[i].alias+'</option>');
-                } 
-            }
-            else{
-                $('#class').html('<option value="">Not found</option>');
-            }
-            
-        });
-    });
- 
+          $('#class').html('<option value="">Searching ...</option>');
+          $.ajax({
+            method: "get",
+            url: "{{ route('admin.class.search2') }}",
+            data: { id: $(this).val(),center_id: $('input[name="center"]:checked').val() }
+          })
+          .done(function( response ) {            
+              if(response.length>0){
+                  $('#class').html('<option value="">Select Class</option>');
+                  for (var i = 0; i < response.length; i++) {
+                      $('#class').append('<option value="'+response[i].id+'">'+response[i].alias+'</option>');
+                  } 
+              }
+              else{
+                  $('#class').html('<option value="">Not found</option>');
+              }
+              
+          });
+      });
+      $("#class").change(function(){
+          $('#section').html('<option value="">Searching ...</option>');   
+          $.ajax({
+            method: "get",
+            url: "{{ route('admin.section.search') }}",
+            data: { id: $(this).val(), session: $('#session').val(),center_id: $('input[name="center"]:checked').val() }
+          })
+          .done(function( response ) {
+              if(response.section.length>0){
+                 $('#section').html('<option value="">Select Section</option>');
+                  for (var i = 0; i < response.section.length; i++) {
+                      $('#section').append('<option value="'+response.section[i].id+'">'+response.section[i].name+'</option>');
+                  } 
+              }
+              else{
+                  $('#section').html('<option value="">Not found</option>');
+              }
+              
+          });
+      });
 </script>
 
  @if(Session::has('message'))

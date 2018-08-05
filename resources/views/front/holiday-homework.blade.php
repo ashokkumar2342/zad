@@ -19,7 +19,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-9 col-sm-9 col-xs-12">
-             <h4>Winter Vacations (Holiday Homework)</h4>       
+             <h4>Summer Vacations (Holiday Homework) 2018-2019</h4>       
                <table>
                 <thead>
                 <tr>  
@@ -28,105 +28,93 @@
                   <th width="80px">Action</th>                                 
                 </tr>
                 </thead>
-                <tbody>               
+                <tbody> 
+                <tr>           
+                  <td>LKG</td>
+                  <td>Holidays Homework</td>
+                  <td align="center">
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Class LKG.pdf') }}"> Download</a>
+                  </td>                 
+                </tr>
+                <tr>           
+                  <td>UKG</td>
+                  <td>Holidays Homework</td>
+                  <td align="center">
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Class UKG.pdf') }}"> Download</a>
+                  </td>                 
+                </tr>              
                 <tr>           
                   <td>Class 1</td>
                   <td>Holidays Homework</td>
                   <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Holidays Homework-1.pdf') }}"> Download</a>
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class 1.pdf') }}"> Download</a>
                   </td>                 
                 </tr>
                 <tr>           
                   <td>Class 2</td>
                   <td>Holidays Homework</td>
                   <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Holidays Homework-2.pdf') }}"> Download</a>
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class 2.pdf') }}"> Download</a>
                   </td>                 
                 </tr>
                 <tr>           
                   <td>Class 3</td>
                   <td>Holidays Homework</td>
                   <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Holidays Homework-3.pdf') }}"> Download</a>
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class 3.pdf') }}"> Download</a>
                   </td>                 
                 </tr>
                 <tr>           
                   <td>Class 4</td>
                   <td>Holidays Homework</td>
                   <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Holidays Homework-4.pdf') }}"> Download</a>
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class 4.pdf') }}"> Download</a>
                   </td>                 
                 </tr>
                 <tr>           
                   <td>Class 5</td>
                   <td>Holidays Homework</td>
                   <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Holidays Homework-5.pdf') }}"> Download</a>
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class 5.pdf') }}"> Download</a>
                   </td>                 
                 </tr>
                 <tr>           
                   <td>Class 6</td>
                   <td>Holidays Homework</td>
                   <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Holidays Homework-6.pdf') }}"> Download</a>
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class 6.pdf') }}"> Download</a>
                   </td>                 
                 </tr>
                 <tr>           
                   <td>Class 7</td>
                   <td>Holidays Homework</td>
                   <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Holidays Homework-7.pdf') }}"> Download</a>
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class 7.pdf') }}"> Download</a>
                   </td>                 
                 </tr>
                 <tr>       
                   <td>Class 8</td>
                   <td>Holidays Homework</td>
                   <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Holidays Homework-8.pdf') }}"> Download</a>
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class 8.pdf') }}"> Download</a>
                   </td>                 
                 </tr>
                 <tr>           "> Download</a>
                   <td>Class 9</td>
                   <td>Holidays Homework</td>
                   <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Holidays Homework-9.pdf') }}"> Download</a>
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class 9.pdf') }}"> Download</a>
                   </td>                 
                 </tr>
                 <tr>           
                   <td>Class 10</td>
                   <td>Holidays Homework</td>
                   <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/Holidays Homework-10.pdf') }}"> Download</a>
+                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/class 10.pdf') }}"> Download</a>
                   </td>                 
                 </tr>
-                <tr>           
-                  <td>LKG</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/LKG Holidays Homework.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                <tr>           
-                  <td>UKG</td>
-                  <td>Holidays Homework</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/UKG Holidays Homework.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                  <tr>           
-                  <td>LKG</td>
-                  <td>Worsheet</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/LKG Worksheet.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>
-                <tr>           
-                  <td>UKG</td>
-                  <td>Worsheet</td>
-                  <td align="center">
-                    <a class="btn btn-success btn-xs" target="blank" href="{{ asset('homework/UKG Worsheet.pdf') }}"> Download</a>
-                  </td>                 
-                </tr>              
+           
+                              
                 </tbody>                 
               </table>           
                

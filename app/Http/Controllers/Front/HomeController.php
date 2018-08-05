@@ -43,6 +43,12 @@ class HomeController extends Controller
         $holidayhomeworks =  HolidayHomework::orderBy('id','desc')->paginate(10);
         return view('front.holiday-homework2',compact('holidayhomeworks'));
     }
+      public function holiday3()
+    {
+        $holidayhomeworks =  HolidayHomework::orderBy('id','desc')->paginate(10);
+        return view('front.holiday-homework3',compact('holidayhomeworks'));
+    }
+
 
     public function art()
     {

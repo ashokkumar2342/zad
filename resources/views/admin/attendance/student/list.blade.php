@@ -149,12 +149,12 @@
 
  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
  <script type="text/javascript">
-    $("#session").change(function(){
+        $("#session").change(function(){
         $('#class').html('<option value="">Searching ...</option>');
         $.ajax({
           method: "get",
-          url: "{{ route('admin.class.search') }}",
-          data: { id: $(this).val() }
+          url: "{{ route('admin.class.search2') }}",
+          data: { id: $(this).val(),center_id: $('input[name="center"]:checked').val() }
         })
         .done(function( response ) {            
             if(response.length>0){
@@ -170,23 +170,23 @@
         });
     });
     $("#class").change(function(){
-        $('#section').html('<option value="">Searching ...</option>'); 
-        $('#totalFee').html('');       
+        $('#section').html('<option value="">Searching ...</option>');   
         $.ajax({
           method: "get",
           url: "{{ route('admin.section.search') }}",
-          data: { id: $(this).val(), session: $('#session').val() }
+          data: { id: $(this).val(), session: $('#session').val(),center_id: $('input[name="center"]:checked').val() }
         })
         .done(function( response ) {
-            $('#totalFee').val(response.fee);
             if(response.section.length>0){
                $('#section').html('<option value="">Select Section</option>');
                 for (var i = 0; i < response.section.length; i++) {
-                    $('#section').append('<option value="'+response.section[i].id+'">'+response.section[i].name+'</option>');               } 
+                    $('#section').append('<option value="'+response.section[i].id+'">'+response.section[i].name+'</option>');
+                } 
             }
             else{
                 $('#section').html('<option value="">Not found</option>');
-            }           
+            }
+            
         });
     });
     $("#search").submit(function(e){

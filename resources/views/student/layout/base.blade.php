@@ -217,6 +217,12 @@
                             <span>Calendar</span>
                         </a>
                     </li>
+                       <li class="treeview">
+                        <a href="{{ route('student.syllabus.list') }}">
+                            <i class="fa fa-calendar text-warning" aria-hidden="true"></i>
+                            <span>Syllabus</span>
+                        </a>
+                    </li>
                      <li class="treeview">
                         <a href="{{ route('student.sms.list') }}">
                             <i class="fa fa-calendar text-warning" aria-hidden="true"></i>
@@ -242,7 +248,7 @@
             <div class="pull-right hidden-xs">
            
             </div>
-            <div><strong>Copyright 2017 © ZAD Globle School</strong></div>
+            <div><strong>Copyright 2018 © ZAD Global School</strong></div>
             <strong>Developed By <a target="blank" href="https://www.innovusine.com"> Innovusine softwares technology Pvt.Ltd</a>.</strong> 
         </footer>
 

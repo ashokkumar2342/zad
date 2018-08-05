@@ -24,6 +24,7 @@ class SmsController extends Controller
         return view('admin.sms.homework.form',compact('sessions','centers'));
     }
     public function homeworkSend(Request $request){
+
         $homework = \App\HomeWork::findOrFail($request->homeworkId);
          
         $students =  \App\Student::where(['students.center_id'=>$request->center,'students.section_id'=>$request->section,'students.class_id'=>$request->class,'students.session_id'=>$request->session])
@@ -34,14 +35,15 @@ class SmsController extends Controller
                             foreach ($students as $student) {
                                 $message = 'Dear Parents, '.  'Name: '.$student->name.', Class: '.$student->class.', Section: '.$student->section.', Date: '.$homework->created_at->format('d-m-y').', Homework: '.$homework->homework;
                                 $mobile = $student->mobile_sms;
-
+                                
                                 Event::fire(new SendSmsEvent($mobile,$message));
                             }
                     return redirect()->back()->with(['class'=>'success','message'=>'sms send HomeWork successfully ...']);
     }
 
-     public function homeworksms(Homework $homework){
- 
+     public function homeworksms(Request $request){
+        
+        $homework= \App\HomeWork::find($request->id); 
         $datas = \App\HomeWork::where('id',$homework->id)->get(); 
          
         foreach ($datas as $data) {
@@ -53,15 +55,17 @@ class SmsController extends Controller
                             foreach ($students as $student) {
                                 $message = 'Dear Parents, '.  'Name: '.$student->name.', Class: '.$student->class.', Section: '.$student->section.', Date: '.$homework->created_at->format('d-m-y').', Homework: '.$homework->homework;
                                 $mobile = $student->mobile_sms;
-
-                                Event::fire(new SendSmsEvent($mobile,$message));
+                                if ($homework->status == 1) {
+                                  Event::fire(new SendSmsEvent($mobile,$message));
+                                }
+                                
                             }
                              $data = ($homework->status == 1)?['status' => 0, 'addClass' => 'btn-danger', 'removeClass' => 'btn-success','message'=>'User deactivated ...', 'text' => 'Inactive', ]:['status' => 1, 'addClass' => 'btn-success', 'removeClass' => 'btn-danger', 'message'=>'User activated ...', 'text' => 'Active', ]; 
         $homework->status = $data['status'];
         $homework->save();
-                    return redirect()->back()->with(['class'=>'success','message'=>'sms send HomeWork successfully ...']);
+        return response(['class'=>'success','message'=>'sms send HomeWork successfully ...']);
 
-                    }
+        }
     }
 
     

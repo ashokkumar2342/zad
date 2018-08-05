@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>zad global school</title>
+  <title>Zad Global School</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
@@ -105,7 +105,7 @@
                             
                             <li><a href="{{ route('admin.student.huda') }}"><i class="fa fa-circle-o"></i> Huda Complex</a></li>
                             <li><a href="{{ route('admin.student.jind') }}"><i class="fa fa-circle-o"></i> Jind Road</a></li>
-                            <li><a href="{{ route('admin.student.omax') }}"><i class="fa fa-circle-o"></i> OMAX</a></li>
+                            <li><a href="{{ route('admin.student.omax') }}"><i class="fa fa-circle-o"></i> OMAXE</a></li>
                             <li><a href="{{ route('admin.student.list') }}"><i class="fa fa-circle-o"></i> All Student</a></li>
                             <li><a href="{{ route('admin.promote.form') }}"><i class="fa fa-circle-o"></i> Promote</a></li>
                             <li><a href="{{ route('admin.promote.list') }}"><i class="fa fa-circle-o"></i> List section By</a></li>
@@ -224,6 +224,7 @@
                         </a>
                         <ul class="treeview-menu">
                             <li><a href="{{ route('admin.gallery.list') }}"><i class="fa fa-circle-o"></i> List</a></li>
+                            <li><a href="{{ route('admin.gallery-category.list') }}"><i class="fa fa-circle-o"></i> Category</a></li>
                            
                         </ul>
                     </li>

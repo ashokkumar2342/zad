@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Gallery;
-use Illuminate\Http\Request;
+use App\GalleryCategory;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use file;
 
 
@@ -20,7 +21,8 @@ class GalleryController extends Controller
     public function index()
     {
         $gallaries = Gallery::orderBy('id','desc')->paginate(20);
-        return view('admin.gallery.list', compact('gallaries'));
+        $category = array_pluck(GalleryCategory::get(['id','name'])->toArray(),'name', 'id');
+        return view('admin.gallery.list', compact('gallaries','category'));
     }
 
     /**
@@ -48,7 +50,7 @@ class GalleryController extends Controller
         if ($request->hasFile('file')) {
 
             $imageFile = $request->file('file');
-            $imageName = uniqid().$imageFile->getClientOriginalName();
+            $imageName = $imageName = time().'.jpg';
             $imageFile->move(public_path('uploads'),$imageName);
             $gallery = new Gallery();
             $gallery->image = $imageName; 

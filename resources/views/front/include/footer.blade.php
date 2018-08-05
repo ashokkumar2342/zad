@@ -22,6 +22,14 @@
                     <li><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>zgsrtk1@gmail.com</li>
                      
                   </ul>
+                   <h5>School Campus: Omaxe</h5>
+                    
+                  <ul>
+                    <li><span><i class="fa fa-home" aria-hidden="true"></i></span> Zad Global School, OMAXE CIty, Delhi Road Rohtak -124001(Hr.) <!--   --></li>
+                    <li><span><i class="fa fa-phone" aria-hidden="true"></i></span> +91-8295300441</li>
+                    <li><span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>zgsrtk1@gmail.com</li>
+                     
+                  </ul>
   							</div>
   						</div>
   					</div>
@@ -31,16 +39,27 @@
   							<h4 class="title">Location Map</h4>
   							<ul class="twitter-post">
   								<li>
-  									 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6986.265796730783!2d76.58055703590405!3d28.894398624352345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4c75e3cd94e033f2!2sZad+Eduplex+School!5e0!3m2!1sen!2sin!4v1507030634466" width="100%" height="350px" frameborder="0" style="border:0" allowfullscreen></iframe>
+  									 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6986.265796730783!2d76.58055703590405!3d28.894398624352345!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x4c75e3cd94e033f2!2sZad+Eduplex+School!5e0!3m2!1sen!2sin!4v1507030634466" width="100%" height="170px" frameborder="0" style="border:0" allowfullscreen></iframe>
   								</li>
   							</ul>
+             
+                <ul class="twitter-post">
+                  <li>
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d55832.54617398347!2d76.4906917253312!3d29.00117281808732!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xe14585a3932b4933!2sZad+Global+School!5e0!3m2!1sen!2sin!4v1533445012186" width="100%" height="170px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  </li>
+                </ul>
+                 <ul class="twitter-post">
+                  <li>
+                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27953.124857418912!2d76.61105958864349!3d28.86443555143421!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d84c7ec16a643%3A0x1f119dc807a1961a!2sZad+Global+School!5e0!3m2!1sen!2sin!4v1533445061748" width="100%" height="170px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                  </li>
+                </ul>
   						</div>
   					</div>
   					<div class="col-md-4 col-sm-6 col-xs-12">
   						<div class="footer-item">
   							<h4 class="title">Follow Us</h4>
   						 
-  								 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FZAD-Global-School-337867916380217%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="350" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></li>
+  								 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FZAD-Global-School-337867916380217%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="100%" height="500px" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></li>
   								 
   							 
   						</div>

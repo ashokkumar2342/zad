@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Syllabus;
-use App\StudentDetails;
+use App\Center;
 use App\ClassType;
-use App\SessionDate;
-use App\Center;  
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\SessionDate;
+use App\StudentDetails;
+use App\Syllabus;
+use Illuminate\Contracts\Routing\download;
+use Illuminate\Http\Request;
 use Storage;
 
 
@@ -53,14 +54,14 @@ class SyllabusController extends Controller
             'center' => 'required|numeric',
             'session' => 'required|numeric',
             'class' => 'required|numeric',                        
-            'syllabus' => 'required|image|mimes:jpeg,png,jpg|max:3000', 
+            'syllabus' => 'required|mimes:pdf,docx|max:5000', 
             'title' => 'required|max:255',
              
       
         ]);
 
          $file = $request->file('syllabus');
-        $imageName = uniqid().$file->getClientOriginalName();
+        $imageName = time().'.pdf';
         $file->move(public_path('uploads/holidayhomework'),$imageName);
 
         $syllabus= new Syllabus();
@@ -82,9 +83,14 @@ class SyllabusController extends Controller
      * @param  \App\Syllabus  $syllabus
      * @return \Illuminate\Http\Response
      */
-    public function show(Syllabus $syllabus)
+    public function download(Syllabus $syllabus)
     {
-        return view('admin.syllabus.show',compact('syllabus'));
+         
+       // return view('admin.holidayhomework.show',compact('holidayhomework'));
+       $path = public_path('uploads\holidayhomework/'.$syllabus->syllabus);
+
+       return response()->download($path);
+           
         
     }
 
@@ -119,6 +125,10 @@ class SyllabusController extends Controller
      */
     public function destroy(Syllabus $syllabus)
     {
-        //
+         if ($syllabus->delete()) {
+        return redirect()->back()->with(['class'=>'success','message'=>' file Deleted success ...']);
+             
+        }
+        return redirect()->back()->with(['class'=>'error','message'=>'Whoops ! Look like somthing went wrong ..']);
     }
 }

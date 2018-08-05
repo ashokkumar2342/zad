@@ -121,7 +121,19 @@
             @php
               $totalFee+=$studentFee->received_fee+$studentFee->discount;
             @endphp
-            <tr><td>{{ $studentFee->installment_fees }}</td><td>{{ $studentFee->discount }}</td><td>{{ $studentFee->receipt_no }}</td><td>{{ $studentFee->receipt_date }}</td><td>{{ $studentFee->other_fee }}</td><td>{{ $studentFee->received_fee }}</td><td><a class="btn btn-warning btn-xs" href="{{ route('admin.student.fee.edit',$studentFee->id) }}"><i class="fa fa-pencil"></i></a> <a class="btn btn-info btn-xs" href="{{ route('admin.student.receipt.fee',$studentFee->id) }}"><i class="fa fa-file-o"></i></a></td></tr>
+            <tr>
+              <td>{{ $studentFee->installment_fees }}</td>
+              <td>{{ $studentFee->discount }}</td>
+              <td>{{ $studentFee->receipt_no }}</td>
+              <td>{{ $studentFee->receipt_date }}</td>
+              <td>{{ $studentFee->other_fee }}</td>
+              <td>{{ $studentFee->received_fee }}</td>
+              <td>
+                <a class="btn btn-warning btn-xs" href="{{ route('admin.student.fee.edit',$studentFee->id) }}"><i class="fa fa-pencil"></i></a>
+                <a class="btn btn-danger btn-xs" title="Fee Delete" onclick="return confirm('Are you sure to Fee delete.')" href="{{ route('admin.student.fee.delete',$studentFee->id) }}"><i class="fa fa-trash"></i></a>
+                 <a class="btn btn-info btn-xs" href="{{ route('admin.student.receipt.fee',$studentFee->id) }}"><i class="fa fa-file-o"></i></a>
+               </td>
+             </tr>
             @endforeach
 </table>
 </section>

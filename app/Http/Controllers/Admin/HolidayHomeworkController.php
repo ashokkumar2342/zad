@@ -20,7 +20,7 @@ class HolidayHomeworkController extends Controller
      */
     public function index()
     {
-        $holidayhomeworks =  HolidayHomework::orderBy('id','desc')->paginate(10);
+        $holidayhomeworks =  HolidayHomework::all();
         $centers = Center::where('status',1)->get();
         $sessions = array_pluck(SessionDate::get(['id','date'])->toArray(),'date', 'id');
         return view('admin.holidayhomework.list',compact('classes','sessions','sections','centers','holidayhomeworks'));
@@ -49,7 +49,7 @@ class HolidayHomeworkController extends Controller
             'session' => 'required|numeric',
             'class' => 'required|numeric',
             // "section" => 'required|numeric',             
-        'holidayhomework' => 'image|mimes:jpeg,png,jpg|max:3000',             
+        'holidayhomework' => 'mimes:pdf,docx|max:3000',             
             'title' => 'required|max:255',            
       
         ]);
@@ -57,7 +57,7 @@ class HolidayHomeworkController extends Controller
         // $file = $request->file('holidayhomework');
         // $file->move(public_path('uploads');
         $file = $request->file('holidayhomework');
-        $imageName = uniqid().$file->getClientOriginalName();
+        $imageName = time().'.pdf';
         $file->move(public_path('uploads/holidayhomework'),$imageName);
         $holidayhomework= new HolidayHomeWork();
         $holidayhomework->center_id= $request->center;        
@@ -78,9 +78,12 @@ class HolidayHomeworkController extends Controller
      * @param  \App\HolidayHomework  $holidayHomework
      * @return \Illuminate\Http\Response
      */
-    public function show(HolidayHomework $holidayhomework)
+    public function download(HolidayHomework $holidayhomework)
     {
-        return view('admin.holidayhomework.show',compact('holidayhomework'));
+        // return view('admin.holidayhomework.show',compact('holidayhomework'));
+        $path = public_path('uploads\holidayhomework/'.$holidayhomework->holiday_homework);
+
+        return response()->download($path);
     }
 
     /**

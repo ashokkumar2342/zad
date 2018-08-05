@@ -53,7 +53,7 @@ class ContactController extends Controller
         $contacts->mobile = $request->mobile;
         $contacts->message = $request->message;
         if($contacts->save()){ 
-            Mail::to('zgsrtk1@gmail.com')->queue(new ContMail($contacts));
+            // Mail::to('zgsrtk1@gmail.com')->queue(new ContMail($contacts));
              return redirect()->route('front.contact')->with(['message'=>'Send Contact us Successfully ','class'=>'success']);
         }
         return redirect()->back()->with(['class'=>'error','message'=>'Whoops ! Look like somthing went wrong ..']);

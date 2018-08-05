@@ -31,8 +31,10 @@
                   <td>{{ $holidayhomework->title }}</td>
                   <td align="center">
                     
-                    <a class="btn btn-info btn-xs" href="{{ route('student.holidayhomework.show',$holidayhomework->id) }}"><i class="fa fa-eye"></i></a>
+                    {{-- <a class="btn btn-info btn-xs" href="{{ route('student.holidayhomework.show',$holidayhomework->id) }}"><i class="fa fa-eye"></i></a> --}}
                     {{-- <a class="btn btn-success btn-xs" href="/uploads/holidayhomework/{{$holidayhomework->holiday_homework }}"><i class="fa fa-download"></i></a> --}}
+                   {{--  <a class="btn-success btn-xs"  href="{{ route('student.holidayhomework.download',$holidayhomework->id) }}"  ><i class="fa fa-download"></i></a> --}}
+                    <a class="btn-success btn-xs"  href="{{ asset('uploads/holidayhomework/'.$holidayhomework->holiday_homework) }}"  target="blank"><i class="fa fa-download"></i></a>
 
                   </td>                 
                 </tr>

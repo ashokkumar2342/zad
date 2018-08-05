@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Remark;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Remark;
+use App\ReplyRemark;
+use Illuminate\Auth\validate;
+use Illuminate\Http\Request;
 
 
 class RemarksController extends Controller
@@ -16,7 +18,7 @@ class RemarksController extends Controller
      */
     public function index()
     {
-        $remarks =  Remark::all();
+        $remarks =  Remark::orderBy('created_at','DESC')->paginate(20);
        return view('admin.remarks.list', compact('remarks'));
     }
 
@@ -25,9 +27,9 @@ class RemarksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function view()
     {
-        //
+        // return view('admin.remarks.list', compact('remark'));
     }
 
     /**
@@ -36,9 +38,20 @@ class RemarksController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$id)
     {
-        //
+             $this->validate($request,[
+                 'message' => 'required|max:198',
+                  
+                 ]);
+
+        $replyRemark = new ReplyRemark();
+        $replyRemark->remark_id = $id;
+        $replyRemark->message = $request->message;
+        if ($replyRemark->save()) {
+            return redirect()->route('admin.remarks.list')->with(['message'=>' Reply Send successfully','class'=>'success']);
+        }
+
     }
 
     /**
@@ -49,7 +62,8 @@ class RemarksController extends Controller
      */
     public function show(Remark $remark)
     {
-        //
+        $replyRemarks = ReplyRemark::where('remark_id',$remark->id)->orderBy('created_at','desc')->get();
+        return view('admin.remarks/reply_remark', compact('remark','replyRemarks'));
     }
 
     /**

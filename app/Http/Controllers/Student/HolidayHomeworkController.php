@@ -23,7 +23,9 @@ class HolidayHomeworkController extends Controller
     public function index()
     {
        $student = Auth::guard('student')->user(); 
-        $holidayhomeworks =  HolidayHomework::where('class_id',$student->class_id)->orderBy('created_at','desc')->paginate(10);
+
+        $holidayhomeworks =  HolidayHomework::where('center_id',$student->center_id)->where('class_id',$student->class_id)->orderBy('created_at','desc')->paginate(10);
+        
         return view('student.holidayhomework.list',compact('holidayhomeworks'));
     }
 
@@ -71,9 +73,7 @@ class HolidayHomeworkController extends Controller
         
     }
 
-    public function download(){
-         echo "test only";
-    }
+    
 
     /**
      * Update the specified resource in storage.
@@ -85,6 +85,13 @@ class HolidayHomeworkController extends Controller
     public function update(Request $request, HolidayHomework $holidayHomework)
     {
         //
+    }
+    public function download(HolidayHomework $holidayhomework)
+    {
+        // return view('admin.holidayhomework.show',compact('holidayhomework'));
+        $path = public_path('uploads\holidayhomework/'.$holidayhomework->holiday_homework);
+
+        return response()->download($path);
     }
 
     /**
